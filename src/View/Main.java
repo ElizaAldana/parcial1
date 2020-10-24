@@ -1,6 +1,7 @@
 package View;
 
 import processing.core.PApplet;
+import Controler.Control;
 
 public class Main extends PApplet {
 
@@ -20,5 +21,12 @@ public class Main extends PApplet {
 	
 	public void draw() {
 		background(0);
+		textAlign(CENTER);
+		textSize(25);
+		text("Peludos sin hogar", 250,50);
+		textAlign(CORNER);
+		textSize(15);
+		text("ID presiona i, Nombre presiona n, Edad presiona e", 30, 90);
+
 	}
 }
