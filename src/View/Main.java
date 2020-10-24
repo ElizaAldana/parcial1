@@ -1,13 +1,16 @@
-package View;
+package view;
 
+import controller.Control;
 import processing.core.PApplet;
-import Controler.Control;
 
 public class Main extends PApplet {
+	
+	Control control;
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		PApplet.main("View.Main");
+		PApplet.main("view.Main");
 
 	}
 
@@ -16,7 +19,7 @@ public class Main extends PApplet {
 	}
 	
 	public void setup() {
-		
+	 control = new Control(this);
 	}
 	
 	public void draw() {
@@ -25,8 +28,14 @@ public class Main extends PApplet {
 		textSize(25);
 		text("Peludos sin hogar", 250,50);
 		textAlign(CORNER);
-		textSize(15);
-		text("ID presiona i, Nombre presiona n, Edad presiona e", 30, 90);
-
+		textSize(12);
+		text("ID presiona i, Nombre presiona n, Raza presiona r", 20, 90);
+		text("Edad presiona e, Cumpleaños presiona c", 20, 120);
+		for (int i = 0; i < control.dogs().size(); i++) {
+			control.dogs().get(i).drawList(30+(i*20), this);
+		}
 	}
+	public void keyPressed() {
+		control.sortDogsList(key);
+}
 }
