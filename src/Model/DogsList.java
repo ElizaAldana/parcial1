@@ -17,7 +17,7 @@ public class DogsList implements Comparable<DogsList> {
 		this.race = race;
 		this.age = age;
 		this.date = date;
-		this.posX = 130;
+		this.posX = 90;
 	
 	}
 

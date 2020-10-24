@@ -32,7 +32,7 @@ public class Main extends PApplet {
 		text("ID presiona i, Nombre presiona n, Raza presiona r", 20, 90);
 		text("Edad presiona e, Cumpleaños presiona c", 20, 120);
 		for (int i = 0; i < control.dogs().size(); i++) {
-			control.dogs().get(i).drawList(30+(i*20));
+			control.dogs().get(i).drawList(160+(i*20));
 		}
 	}
 	public void keyPressed() {
