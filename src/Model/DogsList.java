@@ -6,12 +6,11 @@ import processing.core.PApplet;
 public class DogsList implements Comparable<DogsList> {
 
 	PApplet app;
-	private String race, name;
-	private int id, age, date, posX, posY;
+	private String race, name, date;
+	private int id, age, posX, posY;
 	
 	
-	public DogsList(int id,String race,String name, int age, int date, int posX, PApplet app) {
-		super();
+	public DogsList(int id,String race,String name, int age, String date, PApplet app) {
 		this.app = app;
 		this.id = id;
 		this.name = name;
@@ -24,7 +23,7 @@ public class DogsList implements Comparable<DogsList> {
 
 
 
-	public void drawList(int posY, PApplet app) {
+	public void drawList(int posY) {
 		app.fill(255);
 		app.text(id, posX, posY);
 		app.text(name, posX+100, posY);
@@ -85,12 +84,12 @@ public class DogsList implements Comparable<DogsList> {
 	}
 
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

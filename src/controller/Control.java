@@ -23,5 +23,6 @@ public class Control {
 	public LinkedList<DogsList> dogs() {
 		return logic.getDogsList();
 	} 
+	
 
 }

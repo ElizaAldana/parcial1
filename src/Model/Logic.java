@@ -17,11 +17,10 @@ public class Logic {
 	private DogsDate date;
 	String[] textOne, textTwo, textSplit, text2Split;
 	//string int imp
-	private String nameD, raceD;
-	private int idD, dateD, ageD;
+	private String nameD, raceD, dateD;
+	private int idD, ageD;
 	
 	public Logic(PApplet app) {
-		super();
 		this.app = app;
 		this.dogslist = new LinkedList <DogsList>();
 		this.age = new DogsAge();
@@ -35,17 +34,17 @@ public class Logic {
 		textTwo = app.loadStrings("../text/datosDos.txt");
 		
 		//imprimir texto
-		for (int i = 0; i < textOne.length; i++) {
-			textSplit = textOne[i].split(",");
-			for (int j = 0; j < textTwo.length; j++) {
-				text2Split = textTwo[j].split(",");
-				if(textTwo[0].equals(textSplit[0])) {
+		for (int i = 0; i < textTwo.length; i++) {
+			text2Split = textTwo[i].split(",");
+			for (int j = 0; j < textOne.length; j++) {
+				textSplit = textOne[j].split(",");
+				if(text2Split[0].equals(textSplit[0])) {
 					idD = Integer.parseInt(textSplit[0]);
 					nameD = textSplit[1];
 					ageD = Integer.parseInt(textSplit[2]);
 					raceD = text2Split[1];
-					dateD = Integer.parseInt(text2Split[2]);
-					dogslist.add(new DogsList(idD, raceD, nameD, ageD, dateD, j, app));
+					dateD = text2Split[2];
+					dogslist.add(new DogsList(idD, raceD, nameD, ageD, dateD, app));
 				}
 			}
 		}
